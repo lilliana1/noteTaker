@@ -14,21 +14,21 @@ app.use(express.static("public"));
 
 // ---------------------------------HTML ROUTES---------------------------------------------------------------
 // HTML Routes  (shows you the page)
-module.export = function (app) {
+
 app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname + "notes.html"));
+    res.sendFile(path.join(__dirname + "/public/notes.html"));
 });
 // this is  a wildcard
 app.get("*", function(req,res){
-    res.sendFile(path.join(__dirname + "index.html"));
+    res.sendFile(path.join(__dirname + "/public/index.html"));
   });
-}
+
 
 
 // ----------------------------------API ROUTES--------------------------------------------------------------
 // API Routes (pass info)
 
-module.exports = function(app) {
+
   // API GET Requests
   // Below code handles when users "visit" a page.
   // In each of the below cases when a user visits a link
@@ -101,7 +101,7 @@ module.exports = function(app) {
         });
       });
 });
-})}
+})
 
 app.listen(PORT, () => {
     console.log(`Listening on Port: ${PORT}`);
