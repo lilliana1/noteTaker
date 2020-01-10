@@ -1,10 +1,18 @@
 # Note Taker
 
-## Introduction 
-CRUD API Note-Taking app using Node.js & Express.js.Enables users to write, save & delete notes.
+## Introduction
+This application is for users that easily forget something important but at the same time like to keep track of things. You will be able to write, save & delete notes.CRUD API Note-Taking app is using Node.js & Express.js
 
 Deployed app via heroku: 
 (works on localhost:3000 if you follow instructions below)
+
+## User Story
+As a user, I want to be able to write and save notes.
+I want to be able to delete notes I've written before.
+So that I can organize my thoughts and keep track of tasks I need to complete.
+
+## Business Context
+For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
 
 ## Technologies
 * HTML 
