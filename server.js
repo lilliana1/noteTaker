@@ -12,19 +12,6 @@ app.use(express.json());
 // For it to be able to read all my public files
 app.use(express.static("public"));
 
-// ---------------------------------HTML ROUTES---------------------------------------------------------------
-// HTML Routes  (shows you the page)
-
-app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname + "/public/notes.html"));
-});
-// this is  a wildcard
-app.get("*", function(req,res){
-    res.sendFile(path.join(__dirname + "/public/index.html"));
-  });
-
-
-
 // ----------------------------------API ROUTES--------------------------------------------------------------
 // API Routes (pass info)
 
@@ -34,9 +21,15 @@ app.get("*", function(req,res){
   // In each of the below cases when a user visits a link
   // ---------------------------------------------------------------------------
   app.get("/api/notes", function (req, res) {
-    // fs.readFile(path.join(__dirname, "/db/db.json"))
+    
+    fs.readFile("db/db.json", "utf8", (err, data)=>{
+      if(err) throw err;
+      res.json(JSON.parse(data))
+  
+    })
+
     // res.sendFile(path.join(__dirname, "/db/db.json"))
-    res.send(db);
+    // res.send(db);
 
 });
 
@@ -102,6 +95,20 @@ app.get("*", function(req,res){
       });
 });
 })
+// ---------------------------------HTML ROUTES---------------------------------------------------------------
+
+// HTML Routes  (shows you the page)
+
+app.get("/notes", function (req, res) {
+  res.sendFile(path.join(__dirname + "/public/notes.html"));
+});
+// this is  a wildcard
+app.get("*", function(req,res){
+  res.sendFile(path.join(__dirname + "/public/index.html"));
+});
+
+
+
 
 app.listen(PORT, () => {
     console.log(`Listening on Port: ${PORT}`);
