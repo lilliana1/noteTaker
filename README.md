@@ -1,7 +1,10 @@
 # Note Taker
 
 ## Introduction 
-Restful CRUD API Note-Taking app using Node.js & Express.js.
+CRUD API Note-Taking app using Node.js & Express.js.Enables users to write, save & delete notes.
+
+Deployed app via heroku: 
+(works on localhost:3000 if you follow instructions below)
 
 ## Technologies
 * HTML 
